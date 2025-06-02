@@ -1,0 +1,113 @@
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    padding: 0 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #10121a; 
+}
+
+body.dark-theme .loading {
+    background-color: #10121a;
+}
+
+.logo_loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logo_loading img {
+    width: 100%;
+    max-width: 180px; 
+    height: auto;
+    margin-bottom: 8px; 
+    transition: filter 0.3s ease;
+}
+
+body.dark-theme .logo_loading img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.logo_loading > a {
+    color: #3b82f6; 
+    font-size: 26px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .logo_loading > a {
+    color: #3b82f6;
+}
+
+.logo_loading span {
+    color: #2563eb; 
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .logo_loading span {
+    color: #2563eb;
+}
+
+
+.loading-spinner {
+    margin-top: 20px;
+    width: 35px;
+    height: 35px;
+    border: 3px solid rgba(59, 130, 246, 0.18); 
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+}
+
+body.dark-theme .loading-spinner {
+    border: 3px solid rgba(59, 130, 246, 0.18);
+    border-top-color: #2563eb;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+    .logo_loading img {
+        max-width: 150px;
+    }
+
+    .logo_loading > a {
+        font-size: 24px;
+    }
+    
+    .loading-spinner {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo_loading img {
+        max-width: 120px;
+    }
+
+    .logo_loading > a {
+        font-size: 20px;
+    }
+    
+    .loading-spinner {
+        width: 30px;
+        height: 30px;
+    }
+}

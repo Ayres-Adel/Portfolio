@@ -1,0 +1,136 @@
+:root {
+  --accent: #2563eb; /* blue-600 */
+  --accent-light: #38bdf8; /* sky-400 */
+}
+
+.welcome-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20, 20, 30, 0.65);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  animation: fadeInBackdrop 0.5s;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.welcome-modal-card {
+  background: rgba(34, 36, 58, 0.92);
+  border-radius: 26px;
+  box-shadow: 0 8px 40px 0 rgba(37,99,235,0.18), 0 1.5px 16px 0 rgba(0,0,0,0.18);
+  padding: 2.7rem 2.2rem 2.2rem 2.2rem;
+  max-width: 370px;
+  width: 92vw;
+  text-align: center;
+  color: #fff;
+  border: 2px solid rgba(37,99,235,0.13);
+  position: relative;
+  backdrop-filter: blur(10px);
+  animation: modalPop 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+  overflow: hidden;
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.welcome-modal-accent-bar {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent, #2563eb) 0%, var(--accent-light, #38bdf8) 100%);
+  border-radius: 26px 26px 0 0;
+  animation: accentBarSlide 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes accentBarSlide {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.welcome-modal-close {
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.18s;
+  z-index: 2;
+}
+.welcome-modal-close:hover {
+  opacity: 1;
+  color: var(--accent, #2563eb);
+}
+
+.welcome-modal-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.1rem;
+  border: 3px solid var(--accent, #2563eb);
+  box-shadow: 0 2px 18px 0 rgba(37,99,235,0.18);
+  background: #fff;
+}
+
+.welcome-modal-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  color: var(--accent, #2563eb);
+}
+
+.welcome-modal-message {
+  font-size: 1.09rem;
+  margin-bottom: 1.7rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.welcome-modal-btn {
+  padding: 0.75rem 2.3rem;
+  background: linear-gradient(90deg, var(--accent, #2563eb) 60%, var(--accent-light, #38bdf8) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(230,57,70,0.10);
+  transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+  outline: none;
+}
+.welcome-modal-btn:hover, .welcome-modal-btn:focus {
+  background: linear-gradient(90deg, var(--accent-light, #38bdf8) 0%, var(--accent, #2563eb) 100%);
+  transform: translateY(-2px) scale(1.045);
+  box-shadow: 0 4px 18px rgba(37,99,235,0.18);
+}
+
+@media (max-width: 500px) {
+  .welcome-modal-card {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    max-width: 98vw;
+  }
+  .welcome-modal-avatar {
+    width: 54px;
+    height: 54px;
+  }
+  .welcome-modal-close {
+    top: 7px;
+    right: 10px;
+    font-size: 1.1rem;
+  }
+}

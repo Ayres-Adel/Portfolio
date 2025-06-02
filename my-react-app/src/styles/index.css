@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(71, 120, 255);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(37, 87, 224);
+  }
+  
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  cursor: url("../oxy-neon-blue/Normal Select.cur"), auto;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+    font-size: var(--Font_size);
+    font-weight: var(--Weights_01);
+    animation: fadeIn 1s ease-in-out;
+    overflow-x: hidden;
+    cursor: url("../oxy-neon-blue/Normal Select.cur"), auto;
+    transition: 0.5s;
+    
+}
+
+
+
+a, button {
+  cursor: url("../oxy-neon-blue/Link Select 2.cur"), pointer !important;
+}
+
+input, textarea {
+  cursor: url("../oxy-neon-blue/Text Select.cur"), text !important;
+}
+
+/* Custom cursor styles */
+body {
+  /* Normal pointer */
+  cursor: url("../oxy-neon-blue/Normal Select.cur"), auto;
+}
+
+a, button {
+  /* Link pointer */
+  cursor: url("../oxy-neon-blue/Link Select 2.cur"), pointer;
+}
+
+input, textarea {
+  /* Text select */
+  cursor: url("../oxy-neon-blue/Text Select.cur"), text;
+}
+
+body.busy {
+  cursor: url("../oxy-neon-blue/Busy.ani"), wait !important;
+}
+
+
+
+
+
